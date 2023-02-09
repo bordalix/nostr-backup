@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Primary Meta Tags -->
+    <title>Nostr backup</title>
+    <meta name="title" content="Nostr backup" />
+    <meta name="description" content="Fetch and backup your Nostr events" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nostr-backup.pages.dev/" />
+    <meta property="og:title" content="Nostr backup" />
+    <meta
+      property="og:description"
+      content="Fetch and backup your Nostr events" />
+    <meta property="og:image" content="/img/nostr-backup_og.png" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nostr-backup.pages.dev/" />
+    <meta property="twitter:title" content="Nostr backup" />
+    <meta
+      property="twitter:description"
+      content="Fetch and backup your Nostr events" />
+    <meta property="twitter:image" content="/img/nostr-backup_twitter.png" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/backup.png" type="image/x-icon" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/nostr-backup.css" />
+    <!-- Lightning -->
+    <meta name="lightning" content="bordalix@getalby.com" />
+    <!-- PWA -->
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="apple-touch-icon" href="/img/backup-192.png" />
+  </head>
+
+  <body>
+    <main class="container">
+      <div class="space-between">
+        <h1>Nostr backup</h1>
+        <p>
+          <a href="https://github.com/bordalix/nostr-backup"
+            ><img src="img/github.png"
+          /></a>
+          <a href="https://twitter.com/bordalix/status/1623293175128379393"
+            ><img src="img/twitter.png"
+          /></a>
+        </p>
+      </div>
+      <p>Fetch and backup your events.</p>
+      <details>
+        <summary>Know more</summary>
+        <p>
+          This app will fetch your events from a big list of relays and generate
+          a json file for your backup.
+        </p>
+        <p>
+          If you want to use your own
+          <a
+            href="https://github.com/bordalix/nostr-backup/blob/master/js/relays.js"
+            >list of relays</a
+          >:
+        </p>
+        <ul>
+          <li>
+            Clone <a href="https://github.com/bordalix/nostr-backup">repo</a>
+          </li>
+          <li>Edit <u>js/relays.js</u></li>
+          <li>Open <u>index.html</u> with a browser</li>
+        </ul>
+        <p>
+          Repo at
+          <a href="https://github.com/bordalix/nostr-backup"
+            >https://github.com/bordalix/nostr-backup</a
+          >
+        </p>
+        <p>
+          Twitter
+          <a href="https://twitter.com/bordalix/status/1623293175128379393"
+            >thread</a
+          >
+          for discussion
+        </p>
+      </details>
+      <div class="box gray">
+        <p style="margin-bottom: 0">
+          Find your Nostr events via your public key
+        </p>
+        <form>
+          <div class="space-between">
+            <p>
+              <input
+                type="text"
+                id="pubkey"
+                name="pubkey"
+                placeholder="Public key (npub or hex)"
+                style="width: 200px"
+                required />
+            </p>
+            <p><button id="backup">Fetch & backup</button></p>
+          </div>
+        </form>
+      </div>
+      <div class="box">
+        <div class="space-between">
+          <p id="fetching-status"></p>
+          <p style="padding-top: 2px">
+            <progress
+              type="range"
+              id="fetching-progress"
+              name="fetching-progress"
+              min="0"
+              max="20"
+              value="0"
+              style="visibility: hidden" />
+          </p>
+        </div>
+        <div class="space-between">
+          <p id="file-download"></p>
+          <p id="events-found"></p>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://bundle.run/buffer@6.0.3"></script>
+    <script src="https://bundle.run/bech32@2.0.0"></script>
+    <script src="https://bundle.run/noble-secp256k1@1.2.14"></script>
+    <script src="js/jquery-3.6.2.min.js"></script>
+    <script src="js/relays.js"></script>
+    <script src="js/nostr-backup.js"></script>
+  </body>
+</html>
