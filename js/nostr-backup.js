@@ -68,7 +68,7 @@ const getEvents = async (pubkey) => {
 }
 
 // button click handler
-$('#backup').on('click', async () => {
+const fetchAndBackup = async () => {
   // reset hash of events
   events = {}
   // reset UI
@@ -108,4 +108,4 @@ $('#backup').on('click', async () => {
   downloadFile(data)
   // re-enable backup button
   $('#backup').prop('disabled', false)
-})
+}
