@@ -27,12 +27,14 @@ details {
   margin: 1rem 0;
 }
 
+p,
 li {
-  line-height: 1.5;
+  line-height: 1.33;
+  margin-bottom: 1rem;
 }
 
-pre {
-  display: inline;
+ul {
+  margin-left: -1rem;
 }
 
 .box {
