@@ -10,7 +10,7 @@ const fetchAndBackup = async () => {
   const checkMark = '&#10003;'
   const txt = {
     fetching: 'Fetching from relays... ',
-    download: `Downloading json file... ${checkMark}`,
+    download: `Downloading javascript file... ${checkMark}`,
   }
   // parse pubkey ('npub' or hexa)
   const pubkey = parsePubkey($('#pubkey').val())
@@ -33,7 +33,7 @@ const fetchAndBackup = async () => {
   $('#fetching-status').html(txt.fetching + checkMark)
   clearInterval(fetchInterval)
   $('#fetching-progress').val(20)
-  // inform user that backup file (json format) is being downloaded
+  // inform user that backup file (js format) is being downloaded
   $('#file-download').html(txt.download)
   downloadFile(data, 'nostr-backup.js')
   // re-enable backup button

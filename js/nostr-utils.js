@@ -37,7 +37,7 @@ const hexa2npub = (hex) => {
 const parsePubkey = (pubkey) =>
   pubkey.match('npub1') ? npub2hexa(pubkey) : pubkey
 
-// download json file
+// download js file
 const downloadFile = (data, fileName) => {
   const prettyJs = 'const data = ' + JSON.stringify(data, null, 2)
   const tempLink = document.createElement('a')
