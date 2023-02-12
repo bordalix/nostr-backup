@@ -48,7 +48,7 @@ const downloadFile = (data, fileName) => {
 }
 
 // fetch events from relay, returns a promise
-const fetchFromRelay = async (relay, pubkey, events) =>
+const fetchFromRelay = async (relay, filter, events) =>
   new Promise((resolve, reject) => {
     try {
       // prevent hanging forever
@@ -59,7 +59,7 @@ const fetchFromRelay = async (relay, pubkey, events) =>
       const subsId = 'my-sub'
       // subscribe to events filtered by author
       ws.onopen = () => {
-        ws.send(JSON.stringify(['REQ', subsId, { authors: [pubkey] }]))
+        ws.send(JSON.stringify(['REQ', subsId, filter]))
       }
 
       // Listen for messages
@@ -84,12 +84,12 @@ const fetchFromRelay = async (relay, pubkey, events) =>
   })
 
 // query relays for events published by this pubkey
-const getEvents = async (pubkey) => {
+const getEvents = async (filter) => {
   // events hash
   const events = {}
   // wait for all relays to finish
   await Promise.allSettled(
-    relays.map((relay) => fetchFromRelay(relay, pubkey, events))
+    relays.map((relay) => fetchFromRelay(relay, filter, events))
   )
   // return data as an array of events
   return Object.keys(events).map((id) => events[id])
