@@ -35,7 +35,7 @@ const fetchAndBackup = async () => {
   $('#fetching-progress').val(20)
   // inform user that backup file (json format) is being downloaded
   $('#file-download').html(txt.download)
-  downloadFile(data, 'nostr-backup.json')
+  downloadFile(data, 'nostr-backup.js')
   // re-enable backup button
   $('#backup').prop('disabled', false)
 }

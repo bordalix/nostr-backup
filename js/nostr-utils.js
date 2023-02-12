@@ -39,9 +39,9 @@ const parsePubkey = (pubkey) =>
 
 // download json file
 const downloadFile = (data, fileName) => {
-  const prettyJson = JSON.stringify(data, null, 2)
+  const prettyJs = 'const data = ' + JSON.stringify(data, null, 2)
   const tempLink = document.createElement('a')
-  const taBlob = new Blob([prettyJson], { type: 'application/json' })
+  const taBlob = new Blob([prettyJs], { type: 'text/javascript' })
   tempLink.setAttribute('href', URL.createObjectURL(taBlob))
   tempLink.setAttribute('download', fileName)
   tempLink.click()
