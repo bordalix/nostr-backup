@@ -1,3 +1,11 @@
+// try to fetch public key from extension
+$(document).ready(async () => {
+  if (window.nostr) {
+    const pubkey = await window.nostr.getPublicKey()
+    if (pubkey) $('#pubkey').val(hexa2npub(pubkey))
+  }
+})
+
 // button click handler
 const fetchAndBackup = async () => {
   // reset UI
