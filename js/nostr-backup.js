@@ -16,7 +16,7 @@ const fetchAndBackup = async () => {
   const pubkey = parsePubkey($('#pubkey').val())
   if (!pubkey) return
   // disable button (will be re-enable at the end of the process)
-  $('#fetchAndBackup').prop('disabled', true)
+  $('#fetch-and-backup').prop('disabled', true)
   // inform user that app is fetching from relays
   $('#fetching-status').html(txt.fetching)
   // show and update fetching progress bar
@@ -37,7 +37,7 @@ const fetchAndBackup = async () => {
   $('#file-download').html(txt.download)
   downloadFile(data, 'nostr-backup.js')
   // re-enable backup button
-  $('#fetchAndBackup').prop('disabled', false)
+  $('#fetch-and-backup').prop('disabled', false)
 }
 
 const getFromExtension = async () => {
@@ -46,11 +46,11 @@ const getFromExtension = async () => {
 }
 
 const pubkeyOnChange = () => {
-  $('#fetchAndBackup').css('display', '')
-  $('#getFromExtension').css('display', 'none')
+  $('#fetch-and-backup').css('display', '')
+  $('#get-from-extension').css('display', 'none')
 }
 
 if (window.nostr) {
-  $('#fetchAndBackup').css('display', 'none')
-  $('#getFromExtension').css('display', '')
+  $('#fetch-and-backup').css('display', 'none')
+  $('#get-from-extension').css('display', '')
 }
