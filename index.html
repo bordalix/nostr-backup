@@ -111,12 +111,21 @@
                 id="pubkey"
                 name="pubkey"
                 placeholder="Public key (npub or hex)"
+                onchange="pubkeyOnChange()"
                 style="width: 200px"
                 required />
             </p>
             <p>
-              <button id="backup" onclick="fetchAndBackup(); return false;">
+              <button
+                id="fetchAndBackup"
+                onclick="fetchAndBackup(); return false;">
                 Fetch & backup
+              </button>
+              <button
+                id="getFromExtension"
+                onclick="getFromExtension(); return false;"
+                style="display: none">
+                Get from extension
               </button>
             </p>
           </div>

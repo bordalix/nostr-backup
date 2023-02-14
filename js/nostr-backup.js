@@ -1,13 +1,3 @@
-// try to fetch public key from extension
-$(document).ready(async () => {
-  if (window.nostr) {
-    window.nostr.enable().then(async () => {
-      const pubkey = await window.nostr.getPublicKey()
-      if (pubkey) $('#pubkey').val(hexa2npub(pubkey))
-    })
-  }
-})
-
 // button click handler
 const fetchAndBackup = async () => {
   // reset UI
@@ -26,7 +16,7 @@ const fetchAndBackup = async () => {
   const pubkey = parsePubkey($('#pubkey').val())
   if (!pubkey) return
   // disable button (will be re-enable at the end of the process)
-  $('#backup').prop('disabled', true)
+  $('#fetchAndBackup').prop('disabled', true)
   // inform user that app is fetching from relays
   $('#fetching-status').html(txt.fetching)
   // show and update fetching progress bar
@@ -47,5 +37,20 @@ const fetchAndBackup = async () => {
   $('#file-download').html(txt.download)
   downloadFile(data, 'nostr-backup.js')
   // re-enable backup button
-  $('#backup').prop('disabled', false)
+  $('#fetchAndBackup').prop('disabled', false)
+}
+
+const getFromExtension = async () => {
+  const pubkey = await window.nostr.getPublicKey()
+  if (pubkey) $('#pubkey').val(pubkey).change()
+}
+
+const pubkeyOnChange = () => {
+  $('#fetchAndBackup').css('display', '')
+  $('#getFromExtension').css('display', 'none')
+}
+
+if (window.nostr) {
+  $('#fetchAndBackup').css('display', 'none')
+  $('#getFromExtension').css('display', '')
 }
