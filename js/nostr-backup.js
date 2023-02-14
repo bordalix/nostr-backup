@@ -1,8 +1,10 @@
 // try to fetch public key from extension
 $(document).ready(async () => {
   if (window.nostr) {
-    const pubkey = await window.nostr.getPublicKey()
-    if (pubkey) $('#pubkey').val(hexa2npub(pubkey))
+    window.nostr.enable().then(async () => {
+      const pubkey = await window.nostr.getPublicKey()
+      if (pubkey) $('#pubkey').val(hexa2npub(pubkey))
+    })
   }
 })
 
