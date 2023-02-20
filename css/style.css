@@ -1,0 +1,64 @@
+body {
+  padding: 8px;
+  margin: 0 auto;
+  max-width: 340px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+main div p img {
+  position: relative;
+  top: 6px;
+  height: 1rem;
+  margin-left: 0.5rem;
+}
+
+details {
+  background-color: rgba(236, 210, 166, 0.3);
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+
+p,
+li {
+  line-height: 1.33;
+}
+
+ul {
+  margin-left: -1rem;
+}
+
+.box {
+  border: 1px solid #ccc;
+  padding: 0 0.5rem;
+  margin: 1rem 0;
+}
+
+.gray {
+  background-color: rgba(183, 177, 168, 0.3);
+}
+
+.red {
+  background-color: rgba(229, 60, 8, 0.3);
+}
+
+.box button {
+  background-color: rgba(0, 0, 0, 0.813);
+  color: white;
+}
+
+footer p {
+  font-size: 0.8rem;
+  margin: 0;
+  text-align: center;
+}

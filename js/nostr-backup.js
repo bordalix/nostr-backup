@@ -10,7 +10,7 @@ const fetchAndBackup = async () => {
   const checkMark = '&#10003;'
   const txt = {
     fetching: 'Fetching from relays... ',
-    download: `Downloading javascript file... ${checkMark}`,
+    download: `Downloading backup file... ${checkMark}`,
   }
   // parse pubkey ('npub' or hexa)
   const pubkey = parsePubkey($('#pubkey').val())
