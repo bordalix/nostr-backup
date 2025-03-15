@@ -22,6 +22,7 @@ const relays = [
   'wss://nostr.gives.africa', // paid relay	10000	npub1g8dcep2exsadx9smhdrgwds06pgfc9yyyww6ftdcgnyukcuzk2csqs5jed
   'wss://nostr.inosta.cc', // paid relay	5000	npub1r34nhc6nqswancymk452f2frgn3ypvu77h4njr67n6ppyuls4ehs44gv0h
   'wss://nostr.milou.lol', // paid relay	1000	npub1rvg76s0gz535txd9ypg2dfqv0x7a80ar6e096j3v343xdxyrt4ksmkxrck
+  'wss://nostr.mom',
   'wss://nostr.onsats.org',
   'wss://nostr.orangepill.dev',
   'wss://nostr.plebchain.org', // paid relay	6969	npub1u2tehhr3ye4lv4dc8aen2gkxf6zljdpf356sgfjqfun0wxehvquqgvhuec
@@ -33,6 +34,7 @@ const relays = [
   'wss://puravida.nostr.land', // paid relay	10000	npub16k7j4mwsqm8hakjl8x5ycrqmhx89lxkfwz2xxxcw75eav7sd8ztqy2rwdn
   'wss://relay.current.fyi',
   'wss://relay.damus.io',
+  'wss://relay.nostr.band',
   'wss://relay.nostr.bg',
   'wss://relay.nostr.com.au', // paid relay	6969	npub1qqqqqrre3jxkuyj3s4m59usdyvm0umgm0lpy6cqjtwpt649sdews5q3hw7
   'wss://relay.nostr.info',
@@ -40,6 +42,7 @@ const relays = [
   'wss://relay.nostrich.land', // paid relay	2100	npub1vj0wlergmkcs0sz7hfks2ywj555c2s87f40squ4sqcmqpr7897fqn6mfew
   'wss://relay.nostriches.org', // paid relay 421	npub1vnmhd287pvxxk5w9mcycf23av24nscwk0da7rrfaa5wq4l8hsehs90ftlv
   'wss://relay.orangepill.dev', // paid relay	4500	npub16jzr7npgp2a684pasnkhjf9j2e7hc9n0teefskulqmf42cqmt4uqwszk52
+  'wss://relay.primal.net',
   'wss://relay.snort.social',
   'wss://relayer.fiatjaf.com',
   'wss://rsslay.fiatjaf.com',
